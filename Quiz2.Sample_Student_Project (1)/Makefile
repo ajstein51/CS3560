@@ -18,8 +18,8 @@ course.o: course.cc
 testcollege.o:
 	g++ $(CXXFLAGS) -std=c++11 testcollege.cc -o testcollege.o
 
-testcollege: testcollege.o course.o college.o collegemain.o
-	g++ -o testcollege testcollege.o course.o college.o collegemain.o
+testcollege: testcollege.o course.o college.o 
+	g++ -o testcollege testcollege.o course.o college.o 
 
 runtest: testcollege
 	./testcollege
@@ -28,5 +28,5 @@ test: build runtest
 
 # deletes
 clean:
-	-rm -rf *.o main
+	-rm -rf *.o main testcollege
 
